@@ -14193,16 +14193,8 @@ var _astroash$elm_spa_boiler_plate$Routes_Navbar$navbarContent = A2(
 		_0: {ctor: '_Tuple2', _0: 'home', _1: 'Home'},
 		_1: {
 			ctor: '::',
-			_0: {ctor: '_Tuple2', _0: 'pageone', _1: 'Page One'},
-			_1: {
-				ctor: '::',
-				_0: {ctor: '_Tuple2', _0: 'pagetwo', _1: 'Page Two'},
-				_1: {
-					ctor: '::',
-					_0: {ctor: '_Tuple2', _0: 'solar', _1: 'Solar'},
-					_1: {ctor: '[]'}
-				}
-			}
+			_0: {ctor: '_Tuple2', _0: 'solar', _1: 'Solar'},
+			_1: {ctor: '[]'}
 		}
 	});
 var _astroash$elm_spa_boiler_plate$Routes_Navbar$navbar = function (model) {

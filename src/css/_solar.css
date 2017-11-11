@@ -208,6 +208,9 @@ ul.solarsystem li.uranus {
   top:10.8vw;
   left:10.8vw;
   z-index: 93;
+}
+
+ul.solarsystem li.uranus span {
   background: #82b3d1;
   top:0;
   left:27vw;
