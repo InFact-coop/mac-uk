@@ -16,7 +16,15 @@ type Route
 type alias Model =
     { route : Route
     , userInput : String
+    , focusedGroup : Maybe OrganisationGroup
     }
+
+
+type OrganisationGroup
+    = PeersFamily
+    | SchoolsCommunity
+    | HealthHousingEmployabilitySafety
+    | CulturePolitics
 
 
 
@@ -26,3 +34,4 @@ type alias Model =
 type Msg
     = Change String
     | UrlChange Navigation.Location
+    | FocusGroup OrganisationGroup

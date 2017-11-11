@@ -7,4 +7,5 @@ model : Model
 model =
     { route = HomeRoute
     , userInput = ""
+    , focusedGroup = Nothing
     }

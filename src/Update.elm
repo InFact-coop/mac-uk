@@ -22,6 +22,12 @@ getPage hash =
             HomeRoute
 
 
+
+-- type Maybe x
+--     = Nothing
+--     | Just x
+
+
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
@@ -30,3 +36,6 @@ update msg model =
 
         UrlChange location ->
             { model | route = (getPage location.hash) } ! [ Cmd.none ]
+
+        FocusGroup orgGroup ->
+            ( { model | focusedGroup = Just orgGroup }, Cmd.none )

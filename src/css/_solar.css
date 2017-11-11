@@ -4,7 +4,6 @@ body {
   background: #080e24 url(https://raw.githubusercontent.com/marvindanig/Images/master/galaxy_starfield_resized.png) repeat;
   color: #626668;
   text-align: center;
-  overflow: hidden;
 }
 
 h1 {
@@ -44,7 +43,6 @@ ul.solarsystem li {
 
 ul.solarsystem li.border {
   border: 2px solid #394057;
-   opacity: 0.7;
 }
 
 ul.solarsystem li span {
@@ -381,4 +379,8 @@ ul.solarsystem li.saturn span.ring {
   -webkit-transform: skewY(50deg);
   -ms-transform: skewY(50deg);
   transform: skewY(50deg);
+}
+
+.blur {
+  opacity: 0.2;
 }
