@@ -8,4 +8,5 @@ model =
     { route = HomeRoute
     , userInput = ""
     , focusedGroup = Nothing
+    , focusedOrganisation = Nothing
     }

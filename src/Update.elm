@@ -39,3 +39,6 @@ update msg model =
 
         FocusGroup orgGroup ->
             ( { model | focusedGroup = Just orgGroup }, Cmd.none )
+
+        FocusOrganisation organisation ->
+            ( { model | focusedOrganisation = Just organisation }, Cmd.none )
