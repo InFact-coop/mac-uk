@@ -6,6 +6,9 @@ repl-temp-*
 # parsed elm
 elm.js
 
+# minified stylesheet
+style.min.css
+
 # Logs
 logs
 *.log
