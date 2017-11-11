@@ -1,0 +1,14 @@
+var _astroash$elm_spa_boiler_plate$Types$Model = F2(
+	function (a, b) {
+		return {route: a, userInput: b};
+	});
+var _astroash$elm_spa_boiler_plate$Types$Solar = {ctor: 'Solar'};
+var _astroash$elm_spa_boiler_plate$Types$PageTwoRoute = {ctor: 'PageTwoRoute'};
+var _astroash$elm_spa_boiler_plate$Types$PageOneRoute = {ctor: 'PageOneRoute'};
+var _astroash$elm_spa_boiler_plate$Types$HomeRoute = {ctor: 'HomeRoute'};
+var _astroash$elm_spa_boiler_plate$Types$UrlChange = function (a) {
+	return {ctor: 'UrlChange', _0: a};
+};
+var _astroash$elm_spa_boiler_plate$Types$Change = function (a) {
+	return {ctor: 'Change', _0: a};
+};

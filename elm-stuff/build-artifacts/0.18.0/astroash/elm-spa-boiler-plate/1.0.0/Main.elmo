@@ -1,0 +1,13 @@
+var _astroash$elm_spa_boiler_plate$Main$main = A2(
+	_elm_lang$navigation$Navigation$program,
+	_astroash$elm_spa_boiler_plate$Types$UrlChange,
+	{
+		init: function (_p0) {
+			return {ctor: '_Tuple2', _0: _astroash$elm_spa_boiler_plate$Model$model, _1: _elm_lang$core$Platform_Cmd$none};
+		},
+		view: _astroash$elm_spa_boiler_plate$View$view,
+		update: _astroash$elm_spa_boiler_plate$Update$update,
+		subscriptions: function (_p1) {
+			return _elm_lang$core$Platform_Sub$none;
+		}
+	})();

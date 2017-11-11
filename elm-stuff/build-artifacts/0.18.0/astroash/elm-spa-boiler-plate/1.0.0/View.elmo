@@ -1,0 +1,27 @@
+var _astroash$elm_spa_boiler_plate$View$view = function (model) {
+	var page = function () {
+		var _p0 = model.route;
+		switch (_p0.ctor) {
+			case 'HomeRoute':
+				return _astroash$elm_spa_boiler_plate$Routes_Home$home(model);
+			case 'PageOneRoute':
+				return _astroash$elm_spa_boiler_plate$Routes_PageOne$pageOne(model);
+			case 'PageTwoRoute':
+				return _astroash$elm_spa_boiler_plate$Routes_PageTwo$pageTwo(model);
+			default:
+				return _astroash$elm_spa_boiler_plate$Routes_Solar$solar(model);
+		}
+	}();
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _astroash$elm_spa_boiler_plate$Routes_Navbar$navbar(model),
+			_1: {
+				ctor: '::',
+				_0: page,
+				_1: {ctor: '[]'}
+			}
+		});
+};
