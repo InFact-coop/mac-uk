@@ -11,6 +11,7 @@ type Route
     | PageOneRoute
     | PageTwoRoute
     | Solar
+    | Organigram
     | NotFound
 
 

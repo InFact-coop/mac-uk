@@ -18,14 +18,11 @@ getPage hash =
         "#solar" ->
             Solar
 
+        "#organigram" ->
+            Organigram
+
         _ ->
             NotFound
-
-
-
--- type Maybe x
---     = Nothing
---     | Just x
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )

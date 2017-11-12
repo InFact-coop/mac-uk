@@ -13,7 +13,7 @@ organigram model =
                 |> Maybe.withDefault REACHteam
     in
         div [ class "w-60-ns center" ]
-            [ h1 [ class "tc f1" ] [ text ("Structure of" ++ (displayOrganisation org) ++ "team") ]
+            [ h1 [ class "tc f1" ] [ text ("Structure of " ++ (displayOrganisation org) ++ " team") ]
             , p [ class "f3 w60 mh1 tc" ] [ text "hello" ]
             ]
 
