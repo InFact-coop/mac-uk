@@ -16,19 +16,19 @@ solar model =
                         []
                     ]
                 ]
-            , li [ class <| "mercury" ++ (getPlanetBlurClass model PeersFamily) ]
+            , li [ classes [ "mercury", getPlanetBlurClass model PeersFamily ] ]
                 [ a [ href "#mercury" ]
                     [ span []
                         []
                     ]
                 ]
-            , li [ class <| "venus border" ++ (getPlanetBlurClass model PeersFamily) ]
+            , li [ classes [ "venus", "border", getPlanetBlurClass model PeersFamily ] ]
                 [ a [ href "#venus" ]
                     [ span []
                         []
                     ]
                 ]
-            , li [ class <| "earth" ++ (getPlanetBlurClass model SchoolsCommunity), onClick (FocusOrganisation ChildrenServices) ]
+            , li [ classes [ "earth", getPlanetBlurClass model SchoolsCommunity ], onClick (FocusOrganisation ChildrenServices) ]
                 [ span []
                     [ span [ class "moon" ]
                         []
@@ -45,15 +45,32 @@ solar model =
                         )
                     ]
                 ]
-            , li [ class <| "mars" ++ (getPlanetBlurClass model SchoolsCommunity) ]
+            , li
+                [ classes
+                    [ "mars"
+                    , getPlanetBlurClass model SchoolsCommunity
+                    ]
+                ]
                 [ span []
                     []
                 ]
-            , li [ class <| "asteroids_meteorids" ++ (getPlanetBlurClass model SchoolsCommunity) ]
+            , li
+                [ classes
+                    [ "asteroids_meteorids"
+                    , getPlanetBlurClass model SchoolsCommunity
+                    ]
+                ]
                 [ span []
                     []
                 ]
-            , li [ class <| "jupiter border" ++ (getPlanetBlurClass model HealthHousingEmployabilitySafety), onClick (FocusOrganisation SocialCareDirect) ]
+            , li
+                [ classes
+                    [ "jupiter"
+                    , "border"
+                    , getPlanetBlurClass model HealthHousingEmployabilitySafety
+                    ]
+                , onClick (FocusOrganisation SocialCareDirect)
+                ]
                 [ span [ class (getPlanetBlurClass model HealthHousingEmployabilitySafety) ]
                     []
                 ]
@@ -67,7 +84,7 @@ solar model =
                         []
                     )
                 ]
-            , li [ class <| "saturn" ++ (getPlanetBlurClass model HealthHousingEmployabilitySafety), onClick (FocusOrganisation REACHteam) ]
+            , li [ classes [ "saturn", getPlanetBlurClass model HealthHousingEmployabilitySafety ], onClick (FocusOrganisation REACHteam) ]
                 [ span []
                     [ span [ class "ring" ]
                         [ text "" ]
@@ -83,21 +100,21 @@ solar model =
                         )
                     ]
                 ]
-            , li [ class <| "uranus border" ++ (getPlanetBlurClass model CulturePolitics) ]
+            , li [ classes [ "uranus", "border", getPlanetBlurClass model CulturePolitics ] ]
                 [ a [ href "#uranus" ]
-                    [ span [ class <| "1" ++ (getPlanetBlurClass model CulturePolitics) ]
+                    [ span [ classes [ "1", getPlanetBlurClass model CulturePolitics ] ]
                         []
-                    , span [ class <| "2" ++ (getPlanetBlurClass model CulturePolitics) ]
+                    , span [ classes [ "2", getPlanetBlurClass model CulturePolitics ] ]
                         []
                     ]
                 ]
-            , li [ class <| "neptune" ++ (getPlanetBlurClass model CulturePolitics) ]
+            , li [ classes [ "neptune", getPlanetBlurClass model CulturePolitics ] ]
                 [ a [ href "#neptune" ]
                     [ span []
                         []
                     ]
                 ]
-            , li [ class <| "pluto" ++ (getPlanetBlurClass model CulturePolitics) ]
+            , li [ classes [ "pluto", getPlanetBlurClass model CulturePolitics ] ]
                 [ a [ href "#pluto" ]
                     [ span []
                         []
@@ -130,4 +147,9 @@ getPlanetBlurClass model orgGroup =
             if orgGroup == focussedGroup then
                 ""
             else
-                " blur "
+                "blur"
+
+
+classes : List String -> Attribute msg
+classes cxs =
+    class <| String.join " " cxs
