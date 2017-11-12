@@ -11,6 +11,7 @@ type Route
     | PageOneRoute
     | PageTwoRoute
     | Solar
+    | NotFound
 
 
 type alias Model =

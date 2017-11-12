@@ -19,7 +19,7 @@ getPage hash =
             Solar
 
         _ ->
-            HomeRoute
+            NotFound
 
 
 

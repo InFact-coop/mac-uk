@@ -38,6 +38,7 @@ solar model =
                         (if model.focusedOrganisation == Just ChildrenServices then
                             [ h4 [ class "f4" ] [ text "Barnet Children and Young People Plan" ]
                             , p [ class "f5" ] [ text "A partnership with children, young people and different organisations that has produced a new child-friendly plan for 2016 - 2020 that reflects the priorities, needs and aspirations of the local population." ]
+                            , a [ href "#contacts" ] [ img [ src "https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-info-6.png&r=255&g=255&b=255", class "mw2" ] [] ]
                             ]
                          else
                             []
