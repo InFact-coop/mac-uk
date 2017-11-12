@@ -11,12 +11,29 @@ type Route
     | PageOneRoute
     | PageTwoRoute
     | Solar
+    | NotFound
 
 
 type alias Model =
     { route : Route
     , userInput : String
+    , focusedGroup : Maybe OrganisationGroup
+    , focusedOrganisation : Maybe Organisation
     }
+
+
+type OrganisationGroup
+    = PeersFamily
+    | SchoolsCommunity
+    | HealthHousingEmployabilitySafety
+    | CulturePolitics
+
+
+type Organisation
+    = REACHteam
+    | ChildrenServices
+    | CommunityPartners
+    | SocialCareDirect
 
 
 
@@ -26,3 +43,5 @@ type alias Model =
 type Msg
     = Change String
     | UrlChange Navigation.Location
+    | FocusGroup OrganisationGroup
+    | FocusOrganisation Organisation

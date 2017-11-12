@@ -1,6 +1,7 @@
 module Routes.Solar exposing (..)
 
 import Html exposing (..)
+import Html.Events exposing (..)
 import Html.Attributes exposing (..)
 import Types exposing (..)
 
@@ -12,136 +13,143 @@ solar model =
             [ li [ class "sun" ]
                 [ a [ href "#sun" ]
                     [ span []
-                        [ text "Sun" ]
+                        []
                     ]
                 ]
-            , li [ class "mercury" ]
+            , li [ classes [ "mercury", getPlanetBlurClass model PeersFamily ] ]
                 [ a [ href "#mercury" ]
                     [ span []
-                        [ text "Mercury" ]
+                        []
                     ]
                 ]
-            , li [ class "venus border" ]
+            , li [ classes [ "venus", "border", getPlanetBlurClass model PeersFamily ] ]
                 [ a [ href "#venus" ]
                     [ span []
-                        [ text "Venus" ]
+                        []
                     ]
                 ]
-            , li [ class "earth" ]
-                [ a [ href "#earth" ]
-                    [ span []
-                        [ text "Earth"
-                        , span [ class "moon" ]
-                            [ text "& Moon" ]
-                        ]
-                    ]
-                ]
-            , li [ class "mars" ]
-                [ a [ href "#mars" ]
-                    [ span []
-                        [ text "Mars" ]
-                    ]
-                ]
-            , li [ class "asteroids_meteorids" ]
+            , li [ classes [ "earth", getPlanetBlurClass model SchoolsCommunity ], onClick (FocusOrganisation ChildrenServices) ]
                 [ span []
-                    [ text "Asteroids & Meteorids" ]
-                ]
-            , li [ class "jupiter border" ]
-                [ a [ href "#jupiter" ]
-                    [ span []
-                        [ text "Jupiter" ]
+                    [ span [ class "moon" ]
+                        []
+                    ]
+                , div []
+                    [ div []
+                        (if model.focusedOrganisation == Just ChildrenServices then
+                            [ h4 [ class "f4" ] [ text "Barnet Children and Young People Plan" ]
+                            , p [ class "f5" ] [ text "A partnership with children, young people and different organisations that has produced a new child-friendly plan for 2016 - 2020 that reflects the priorities, needs and aspirations of the local population." ]
+                            , a [ href "#contacts" ] [ img [ src "https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-info-6.png&r=255&g=255&b=255", class "mw2" ] [] ]
+                            ]
+                         else
+                            []
+                        )
                     ]
                 ]
-            , li [ class "saturn" ]
-                [ a [ href "#saturn" ]
-                    [ span []
-                        [ text "Saturn & "
-                        , span [ class "ring" ]
-                            [ text "Ring" ]
+            , li
+                [ classes
+                    [ "mars"
+                    , getPlanetBlurClass model SchoolsCommunity
+                    ]
+                ]
+                [ span []
+                    []
+                ]
+            , li
+                [ classes
+                    [ "asteroids_meteorids"
+                    , getPlanetBlurClass model SchoolsCommunity
+                    ]
+                ]
+                [ span []
+                    []
+                ]
+            , li
+                [ classes
+                    [ "jupiter"
+                    , "border"
+                    , getPlanetBlurClass model HealthHousingEmployabilitySafety
+                    ]
+                , onClick (FocusOrganisation SocialCareDirect)
+                ]
+                [ span [ class (getPlanetBlurClass model HealthHousingEmployabilitySafety) ]
+                    []
+                ]
+            , div []
+                [ div []
+                    (if model.focusedOrganisation == Just SocialCareDirect then
+                        [ h4 [ class "f4" ] [ text "Social Care Direct" ]
+                        , p [ class "f5" ] [ text "For adults with social care needs and their carers, advice and information about adult social care services and safeguarding alerts" ]
                         ]
+                     else
+                        []
+                    )
+                ]
+            , li [ classes [ "saturn", getPlanetBlurClass model HealthHousingEmployabilitySafety ], onClick (FocusOrganisation REACHteam) ]
+                [ span []
+                    [ span [ class "ring" ]
+                        [ text "" ]
+                    ]
+                , div []
+                    [ div []
+                        (if model.focusedOrganisation == Just REACHteam then
+                            [ h4 [ class "f4" ] [ text "REACH team" ]
+                            , p [ class "f5" ] [ text " a multi-professional and multi-disciplinary team with expertise in safeguarding, mental health, parenting, education and learning, health and communication to jointly assess, plan and intervene with young people presenting with high risk/high vulnerability" ]
+                            ]
+                         else
+                            []
+                        )
                     ]
                 ]
-            , li [ class "uranus border" ]
+            , li [ classes [ "uranus", "border", getPlanetBlurClass model CulturePolitics ] ]
                 [ a [ href "#uranus" ]
-                    [ span [ class "1" ]
-                        [ text "Uranus" ]
-                    , span [ class "2" ]
-                        [ text "Uranus" ]
+                    [ span [ classes [ "1", getPlanetBlurClass model CulturePolitics ] ]
+                        []
+                    , span [ classes [ "2", getPlanetBlurClass model CulturePolitics ] ]
+                        []
                     ]
                 ]
-            , li [ class "neptune" ]
+            , li [ classes [ "neptune", getPlanetBlurClass model CulturePolitics ] ]
                 [ a [ href "#neptune" ]
                     [ span []
-                        [ text "Neptune" ]
+                        []
                     ]
                 ]
-            , li [ class "pluto" ]
+            , li [ classes [ "pluto", getPlanetBlurClass model CulturePolitics ] ]
                 [ a [ href "#pluto" ]
                     [ span []
-                        [ text "Pluto" ]
+                        []
                     ]
                 ]
             ]
-        , ul [ id "descriptions" ]
-            [ li []
-                [ h2 [ id "sun" ]
-                    [ text "Sun" ]
-                , p []
-                    [ text "The Sun is a star, a hot ball of glowing gases at the heart of our solar system. Its influence extends far beyond the orbits of distant Neptune and Pluto. Without the Sun's intense energy and heat, there would be no life on Earth. And though it is special to us, there are billions of stars like our Sun scattered across the Milky Way galaxy." ]
+        , footer [ class "footer dib" ]
+            (List.map viewFooterButton
+                [ ( "Peers & Family", PeersFamily )
+                , ( "School, Community & Neighbourhood", SchoolsCommunity )
+                , ( "health, housing, employability & safety", HealthHousingEmployabilitySafety )
+                , ( "culture and politics", CulturePolitics )
                 ]
-            , li []
-                [ h2 [ id "mercury" ]
-                    [ text "Mercury" ]
-                , p []
-                    [ text "Sun-scorched Mercury is only slightly larger than Earth's Moon. Like the Moon, Mercury has very little atmosphere to stop impacts and it is covered with craters. Mercury's dayside is super heated by the Sun, but at night temperatures drop hundreds of degrees below freezing. Ice may even exist in craters. Mercury's egg-shaped orbit takes it around the Sun every 88 days." ]
-                ]
-            , li []
-                [ h2 [ id "venus" ]
-                    [ text "Venus" ]
-                , p []
-                    [ text "Venus is a dim world of intense heat and volcanic activity. Similar in structure and size to Earth, Venus' thick, toxic atmosphere traps heat in a runaway 'greenhouse effect.' The scorched world has temperatures hot enough to melt lead. Glimpses below the clouds reveal volcanoes and deformed mountains. Venus spins slowly in the opposite direction of most planets." ]
-                ]
-            , li []
-                [ h2 [ id "earth" ]
-                    [ text "Earth" ]
-                , p []
-                    [ text "Earth is an ocean planet. Our home world's abundance of water - and life - makes it unique in our solar system. Other planets, plus a few moons, have ice, atmospheres, seasons and even weather, but only on Earth does the whole complicated mix come together in a way that encourages life - and lots of it." ]
-                ]
-            , li []
-                [ h2 [ id "mars" ]
-                    [ text "Mars" ]
-                , p []
-                    [ text "Though details of Mars' surface are difficult to see from Earth, telescope observations show seasonally changing features and white patches at the poles. For decades, people speculated that bright and dark areas on Mars were patches of vegetation, that Mars could be a likely place for life-forms, and that water might exist in the polar caps. When the Mariner 4 spacecraft flew by Mars in 1965, many were shocked to see photographs of a bleak, cratered surface. Mars seemed to be a dead planet. Later missions, however, have shown that Mars is a complex member of the solar system and holds many mysteries yet to be solved." ]
-                ]
-            , li []
-                [ h2 [ id "jupiter" ]
-                    [ text "Jupiter" ]
-                , p []
-                    [ text "The most massive planet in our solar system, with four large moons and many smaller moons, Jupiter forms a kind of miniature solar system. Jupiter resembles a star in composition. In fact, if it had been about 80 times more massive, it would have become a star rather than a planet." ]
-                ]
-            , li []
-                [ h2 [ id "saturn" ]
-                    [ text "Saturn" ]
-                , p []
-                    [ text "Saturn was the most distant of the five planets known to the ancients. Like Jupiter, Saturn is made mostly of hydrogen and helium. Its volume is 755 times greater than that of Earth. Winds in the upper atmosphere reach 500 meters (1,600 feet) per second in the equatorial region. These super-fast winds, combined with heat rising from within the planet's interior, cause the yellow and gold bands visible in the atmosphere." ]
-                ]
-            , li []
-                [ h2 [ id "uranus" ]
-                    [ text "Uranus" ]
-                , p []
-                    [ text "The first planet found with the aid of a telescope, Uranus was discovered in 1781 by astronomer William Herschel. The seventh planet from the Sun is so distant that it takes 84 years to complete one orbit." ]
-                ]
-            , li []
-                [ h2 [ id "neptune" ]
-                    [ text "Neptune" ]
-                , p []
-                    [ text "Nearly 4.5 billion kilometers (2.8 billion miles) from the Sun, Neptune orbits the Sun once every 165 years. It is invisible to the naked eye because of its extreme distance from Earth. Interestingly, the unusual elliptical orbit of the dwarf planet Pluto brings Pluto inside Neptune's orbit for a 20-year period out of every 248 Earth years" ]
-                ]
-            , li []
-                [ h2 [ id "pluto" ]
-                    [ text "Pluto" ]
-                , p []
-                    [ text "Tiny, cold and incredibly distant, Pluto was discovered in 1930 and long considered to be the ninth planet. But after the discoveries of similar intriguing worlds even farther out, Pluto was reclassified as a dwarf planet. This new class of worlds may offer some of the best evidence of the origins of our solar system." ]
-                ]
-            ]
+            )
         ]
+
+
+viewFooterButton : ( String, OrganisationGroup ) -> Html Msg
+viewFooterButton ( label, orgGroup ) =
+    li [ class "dib pa2 ma2", onClick (FocusGroup orgGroup) ] [ text label ]
+
+
+getPlanetBlurClass : Model -> OrganisationGroup -> String
+getPlanetBlurClass model orgGroup =
+    case model.focusedGroup of
+        Nothing ->
+            ""
+
+        Just focussedGroup ->
+            if orgGroup == focussedGroup then
+                ""
+            else
+                "blur"
+
+
+classes : List String -> Attribute msg
+classes cxs =
+    class <| String.join " " cxs
