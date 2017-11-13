@@ -1,0 +1,35 @@
+{
+  "name": "elm-boiler-plate",
+  "version": "1.0.0",
+  "description": "a boiler plate for elm projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run css-build; elm-live src/Main.elm --output=public/elm.js --dir=public --open --debug --pushstate & npm run css-watch",
+    "build": "npm run css-build; elm-make src/Main.elm --output=public/elm.js",
+    "css-watch": "postcss ./src/css/index.css --output ./public/style.min.css --watch --config ./postcss.config.js",
+    "css-build": "postcss ./src/css/index.css --output ./public/style.min.css --config ./postcss.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astroash/elm-spa-boiler-plate.git"
+  },
+  "author": "John Whiles && Astro Ash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/astroash/elm-spa-boiler-plate/issues"
+  },
+  "homepage": "https://github.com/astroash/elm-spa-boiler-plate#readme",
+  "devDependencies": {
+    "elm-live": "^2.7.5",
+    "autoprefixer": "^7.1.6",
+    "postcss-clean": "^1.1.0",
+    "postcss-cli": "^4.1.1",
+    "postcss-custom-media": "^6.0.0",
+    "postcss-custom-properties": "^6.2.0",
+    "postcss-import": "^11.0.0"
+  },
+  "dependencies": {
+    "tachyons-custom": "^4.9.0"
+  }
+}
