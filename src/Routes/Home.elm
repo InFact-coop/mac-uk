@@ -9,5 +9,7 @@ import Types exposing (..)
 home : Model -> Html Msg
 home model =
     div [ class "w-60-ns center" ]
-        [ h1 [ class "tc f1" ] [ text "MAC-UK's Solar Systems" ]
+        [ div
+            [ class "br-100 b--dark-grey w3 h3 bg-light-pink" ]
+            [ text "hello" ]
         ]

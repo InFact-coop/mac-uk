@@ -9,12 +9,6 @@ getPage hash =
         "#home" ->
             HomeRoute
 
-        "#pageone" ->
-            PageOneRoute
-
-        "#pagetwo" ->
-            PageTwoRoute
-
         "#solar" ->
             Solar
 

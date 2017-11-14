@@ -8,8 +8,6 @@ import Navigation
 
 type Route
     = HomeRoute
-    | PageOneRoute
-    | PageTwoRoute
     | Solar
     | Organigram
     | NotFound
