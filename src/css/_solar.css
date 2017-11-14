@@ -49,8 +49,8 @@ ul.solarsystem li.border {
 ul.solarsystem li span {
   display: block;
   position: absolute;
-  width: 1.35vw;
-  height: 1.35vw;
+  width: 2.5vw;
+  height: 2.5vw;
   border-radius: 100%;
 }
 
@@ -271,58 +271,58 @@ ul.solarsystem li.earth span {
 }
 
 ul.solarsystem li.mercury {
-  -webkit-animation-duration: 5s;
-  -moz-animation-duration: 5s;
+  -webkit-animation-duration: 140s;
+  -moz-animation-duration: 140s;
 }
 
 ul.solarsystem li.venus {
-  -webkit-animation-duration: 8s;
-  -moz-animation-duration: 8s;
+  -webkit-animation-duration: 140s;
+  -moz-animation-duration: 140s;
 }
 
 ul.solarsystem li.earth {
-  -webkit-animation-duration: 12s;
-  -moz-animation-duration: 12s;
+  -webkit-animation-duration: 140s;
+  -moz-animation-duration: 140s;
 }
 
 ul.solarsystem li.earth span {
-  -webkit-animation-duration: 2s;
-  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 140s;
+  -moz-animation-duration: 140s;
 }
 
 ul.solarsystem li.mars {
-  -webkit-animation-duration: 20s;
-  -moz-animation-duration: 20s;
+  -webkit-animation-duration: 140s;
+  -moz-animation-duration: 140s;
 }
 
 ul.solarsystem li.asteroids_meteorids {
-  -webkit-animation-duration: 50s;
-  -moz-animation-duration: 50s;
+  -webkit-animation-duration: 140s;
+  -moz-animation-duration: 140s;
 }
 
 ul.solarsystem li.jupiter {
-  -webkit-animation-duration: 30s;
-  -moz-animation-duration: 30s;
+  -webkit-animation-duration: 140s;
+  -moz-animation-duration: 140s;
 }
 
 ul.solarsystem li.saturn {
-  -webkit-animation-duration: 60s;
-  -moz-animation-duration: 60s;
+  -webkit-animation-duration: 140s;
+  -moz-animation-duration: 140s;
 }
 
 ul.solarsystem li.uranus {
-  -webkit-animation-duration: 70s;
-  -moz-animation-duration: 70s;
+  -webkit-animation-duration: 140s;
+  -moz-animation-duration: 140s;
 }
 
 ul.solarsystem li.neptune {
-  -webkit-animation-duration: 100s;
-  -moz-animation-duration: 100s;
+  -webkit-animation-duration: 140s;
+  -moz-animation-duration: 140s;
 }
 
 ul.solarsystem li.pluto {
-  -webkit-animation-duration: 120s;
-  -moz-animation-duration: 120s;
+  -webkit-animation-duration: 140s;
+  -moz-animation-duration: 140s;
 }
 
 @-webkit-keyframes orbit {
