@@ -18,4 +18,4 @@ navbarLink ( linkStr, name ) =
 
 navbarContent : List (Html Msg)
 navbarContent =
-    List.map navbarLink [ ( "home", "Home" ), ( "solar", "Solar" ) ]
+    List.map navbarLink [ ( "home", "Home" ), ( "solar", "Solar" ), ( "organigram", "Organigram" ) ]

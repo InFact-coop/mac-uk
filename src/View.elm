@@ -10,6 +10,7 @@ import Routes.Home exposing (..)
 import Routes.PageOne exposing (..)
 import Routes.PageTwo exposing (..)
 import Routes.Solar exposing (..)
+import Routes.Organigram exposing (..)
 import Routes.NotFound exposing (..)
 import Routes.Navbar exposing (..)
 
@@ -30,6 +31,9 @@ view model =
 
                 Solar ->
                     solar model
+
+                Organigram ->
+                    organigram model
 
                 NotFound ->
                     notFound
