@@ -16,6 +16,7 @@ type Route
 type alias Model =
     { route : Route
     , userInput : String
+    , focusedNetwork : Maybe NetworkHub
     , focusedGroup : Maybe OrganisationGroup
     , focusedOrganisation : Maybe Organisation
     }
@@ -26,6 +27,14 @@ type OrganisationGroup
     | SchoolsCommunity
     | HealthHousingEmployabilitySafety
     | CulturePolitics
+
+
+type NetworkHub
+    = Barnet
+    | Havering
+    | StChristophers
+    | Islington
+    | FutureHaringey
 
 
 type Organisation
