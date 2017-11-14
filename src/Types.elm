@@ -10,6 +10,7 @@ type Route
     = HomeRoute
     | Solar
     | Organigram
+    | Contact
     | NotFound
 
 
@@ -19,6 +20,20 @@ type alias Model =
     , focusedNetwork : Maybe NetworkHub
     , focusedGroup : Maybe OrganisationGroup
     , focusedOrganisation : Maybe Organisation
+    , contactEditDisabled : Bool
+    }
+
+
+type alias ContactInfo =
+    { name : String
+    , jobTitle : String
+    , organisation : String
+    , keyContact : String
+    , primaryNeeds : String
+    , email : String
+    , phoneNumber : String
+    , interactions : String
+    , notes : String
     }
 
 
@@ -54,3 +69,4 @@ type Msg
     | FocusNetworkHub NetworkHub
     | FocusGroup OrganisationGroup
     | FocusOrganisation Organisation
+    | EditContact Model

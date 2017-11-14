@@ -11,6 +11,7 @@ import Routes.Solar exposing (..)
 import Routes.Organigram exposing (..)
 import Routes.NotFound exposing (..)
 import Routes.Navbar exposing (..)
+import Routes.Contact exposing (..)
 
 
 view : Model -> Html Msg
@@ -26,6 +27,9 @@ view model =
 
                 Organigram ->
                     organigram model
+
+                Contact ->
+                    contact testDetails model
 
                 NotFound ->
                     notFound

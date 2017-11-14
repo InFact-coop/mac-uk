@@ -10,4 +10,5 @@ model =
     , focusedNetwork = Nothing
     , focusedGroup = Nothing
     , focusedOrganisation = Nothing
+    , contactEditDisabled = True
     }

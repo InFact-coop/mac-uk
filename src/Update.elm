@@ -15,6 +15,9 @@ getPage hash =
         "#organigram" ->
             Organigram
 
+        "#contact" ->
+            Contact
+
         _ ->
             NotFound
 
@@ -36,3 +39,7 @@ update msg model =
 
         FocusNetworkHub network ->
             ( { model | focusedNetwork = Just network }, Cmd.none )
+            
+        EditContact oldModel ->
+            ( { model | contactEditDisabled = not oldModel.contactEditDisabled }, Cmd.none )
+
