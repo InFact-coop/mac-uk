@@ -33,3 +33,6 @@ update msg model =
 
         FocusOrganisation organisation ->
             ( { model | focusedOrganisation = Just organisation }, Cmd.none )
+
+        FocusNetworkHub network ->
+            ( { model | focusedNetwork = Just network }, Cmd.none )

@@ -51,5 +51,6 @@ type Organisation
 type Msg
     = Change String
     | UrlChange Navigation.Location
+    | FocusNetworkHub NetworkHub
     | FocusGroup OrganisationGroup
     | FocusOrganisation Organisation
