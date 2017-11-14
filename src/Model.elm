@@ -7,6 +7,7 @@ model : Model
 model =
     { route = HomeRoute
     , userInput = ""
+    , focusedNetwork = Nothing
     , focusedGroup = Nothing
     , focusedOrganisation = Nothing
     , contactEditDisabled = True

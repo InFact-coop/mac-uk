@@ -9,12 +9,6 @@ getPage hash =
         "#home" ->
             HomeRoute
 
-        "#pageone" ->
-            PageOneRoute
-
-        "#pagetwo" ->
-            PageTwoRoute
-
         "#solar" ->
             Solar
 
@@ -43,5 +37,9 @@ update msg model =
         FocusOrganisation organisation ->
             ( { model | focusedOrganisation = Just organisation }, Cmd.none )
 
+        FocusNetworkHub network ->
+            ( { model | focusedNetwork = Just network }, Cmd.none )
+            
         EditContact oldModel ->
             ( { model | contactEditDisabled = not oldModel.contactEditDisabled }, Cmd.none )
+

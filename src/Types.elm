@@ -8,8 +8,6 @@ import Navigation
 
 type Route
     = HomeRoute
-    | PageOneRoute
-    | PageTwoRoute
     | Solar
     | Organigram
     | Contact
@@ -19,6 +17,7 @@ type Route
 type alias Model =
     { route : Route
     , userInput : String
+    , focusedNetwork : Maybe NetworkHub
     , focusedGroup : Maybe OrganisationGroup
     , focusedOrganisation : Maybe Organisation
     , contactEditDisabled : Bool
@@ -45,6 +44,14 @@ type OrganisationGroup
     | CulturePolitics
 
 
+type NetworkHub
+    = Barnet
+    | Havering
+    | StChristophers
+    | Islington
+    | FutureHaringey
+
+
 type Organisation
     = REACHteam
     | ChildrenServices
@@ -59,6 +66,7 @@ type Organisation
 type Msg
     = Change String
     | UrlChange Navigation.Location
+    | FocusNetworkHub NetworkHub
     | FocusGroup OrganisationGroup
     | FocusOrganisation Organisation
     | EditContact Model

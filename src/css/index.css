@@ -61,5 +61,7 @@
 /* solar test */
 @import './_solar';
 
-/* Organigram */
+/* home test */
+@import './_home';
+/* organigram */
 @import './_organigram';

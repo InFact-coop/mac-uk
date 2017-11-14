@@ -1,0 +1,27 @@
+.bubble {
+  animation-name: grow-shrink;
+  animation-iteration-count: infinite;
+}
+
+.slow {
+  animation-duration: 20s;
+}
+
+
+.medium {
+  animation-duration: 15s;
+}
+
+.fast {
+  animation-duration: 10s;
+}
+
+@keyframes grow-shrink {
+  0% {transform: scale(1)}
+  50% {transform: scale(1.2)}
+  100% {transform: scale(1)}
+}
+
+.translucent {
+  background-color: rgba(255, 255, 255, 0.2);
+}
