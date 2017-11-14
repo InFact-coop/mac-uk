@@ -145,6 +145,7 @@ ul.solarsystem li.earth span.moon {
   background: #ccc;
   top: 1.35vw;
   left:1.8vw;
+  display: none;
 }
 
 ul.solarsystem li.mars {
@@ -271,28 +272,28 @@ ul.solarsystem li.earth span {
 }
 
 ul.solarsystem li.mercury {
-  -webkit-animation-duration: 140s;
-  -moz-animation-duration: 140s;
+  -webkit-animation-duration: 120s;
+  -moz-animation-duration: 120s;
 }
 
 ul.solarsystem li.venus {
-  -webkit-animation-duration: 140s;
-  -moz-animation-duration: 140s;
+  -webkit-animation-duration: 120s;
+  -moz-animation-duration: 120s;
 }
 
 ul.solarsystem li.earth {
-  -webkit-animation-duration: 140s;
-  -moz-animation-duration: 140s;
+  -webkit-animation-duration: 170s;
+  -moz-animation-duration: 170s;
 }
 
 ul.solarsystem li.earth span {
-  -webkit-animation-duration: 140s;
-  -moz-animation-duration: 140s;
+  -webkit-animation-duration: 170s;
+  -moz-animation-duration: 170s;
 }
 
 ul.solarsystem li.mars {
-  -webkit-animation-duration: 140s;
-  -moz-animation-duration: 140s;
+  -webkit-animation-duration: 200s;
+  -moz-animation-duration: 200s;
 }
 
 ul.solarsystem li.asteroids_meteorids {
@@ -380,6 +381,7 @@ ul.solarsystem li.saturn span.ring {
   -webkit-transform: skewY(50deg);
   -ms-transform: skewY(50deg);
   transform: skewY(50deg);
+  display: none;
 }
 
 .blur {
