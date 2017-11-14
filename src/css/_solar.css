@@ -26,11 +26,12 @@ h2 {
 ul.solarsystem {
   position: relative;
   height:90vw;
+  width: 90vw;
+  margin: 0 auto;
   list-style: none;
   -webkit-transition: all 0.09s ease-in;
   transition: all 0.09s ease-in;
   overflow: hidden;
-  margin: 0 auto;
 }
 
 

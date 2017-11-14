@@ -13,7 +13,7 @@ solar model =
             getOrganisationTitleAndDescription model.focusedOrganisation
     in
         section [ class "clearfix" ]
-            [ div [ class "ma3 fr" ]
+            [ div [ class "ma3 fr dn" ]
                 [ h4 [ class "f3 white pa2" ] [ text title ]
                 , p [ class "f5 white pa2" ]
                     [ text description

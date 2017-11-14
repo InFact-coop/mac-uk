@@ -1,5 +1,19 @@
 .bubble {
-  animation: grow-shrink 20s infinite;
+  animation-name: grow-shrink;
+  animation-iteration-count: infinite;
+}
+
+.slow {
+  animation-duration: 20s;
+}
+
+
+.medium {
+  animation-duration: 15s;
+}
+
+.fast {
+  animation-duration: 10s;
 }
 
 @keyframes grow-shrink {
