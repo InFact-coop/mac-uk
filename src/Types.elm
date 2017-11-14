@@ -12,6 +12,7 @@ type Route
     | PageTwoRoute
     | Solar
     | Organigram
+    | Contact
     | NotFound
 
 
@@ -20,6 +21,20 @@ type alias Model =
     , userInput : String
     , focusedGroup : Maybe OrganisationGroup
     , focusedOrganisation : Maybe Organisation
+    , contactEditDisabled : Bool
+    }
+
+
+type alias ContactInfo =
+    { name : String
+    , jobTitle : String
+    , organisation : String
+    , keyContact : String
+    , primaryNeeds : String
+    , email : String
+    , phoneNumber : String
+    , interactions : String
+    , notes : String
     }
 
 
@@ -46,3 +61,4 @@ type Msg
     | UrlChange Navigation.Location
     | FocusGroup OrganisationGroup
     | FocusOrganisation Organisation
+    | EditContact Model

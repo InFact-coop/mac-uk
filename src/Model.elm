@@ -9,4 +9,5 @@ model =
     , userInput = ""
     , focusedGroup = Nothing
     , focusedOrganisation = Nothing
+    , contactEditDisabled = True
     }
