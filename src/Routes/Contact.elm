@@ -25,15 +25,27 @@ testDetails =
         "s.lude@reachteam.co.uk"
         "+44712345689"
         "Last meeting - 11/02"
-        "Keen to get more involved"
+        "Keen to get more involved with the organisation, went to the last business meeting,"
 
 
 contactItem : ( String, String, Bool ) -> Html Msg
 contactItem ( field, data, bool ) =
     div []
-        [ label [ class "db fw4 lh-copy f6" ] [ text field ]
+        [ label [ class "db fw4 lh-copy f6  light-silver" ] [ text field ]
         , input
-            [ class "pa2 mb2 input-reset ba bg-transparent w-80 measure"
+            [ classList
+                [ ( "br2", True )
+                , ( "pa2", True )
+                , ( "mb2", True )
+                , ( "input-reset", True )
+                , ( "ba", True )
+                , ( "b--light-silver", bool )
+                , ( "light-silver", bool )
+                , ( "bg-transparent", bool )
+                , ( "w-80", True )
+                , ( "measure", True )
+                , ( "f6", True )
+                ]
             , disabled bool
             , value data
             ]
@@ -50,12 +62,31 @@ contactContent info model =
         , ( "Key Point of Contact:", info.keyContact, model.contactEditDisabled )
         , ( "Primary Needs", info.primaryNeeds, model.contactEditDisabled )
         , ( "Email:", info.email, model.contactEditDisabled )
-        , ( "Phone Number,", info.phoneNumber, model.contactEditDisabled )
+        , ( "Phone Number:", info.phoneNumber, model.contactEditDisabled )
         , ( "Interactions:", info.interactions, model.contactEditDisabled )
-        , ( "MAC-UK Notes:", info.notes, model.contactEditDisabled )
         ]
+        ++ [ label [ class "db fw4 lh-copy f6  light-silver" ] [ text "Notes" ]
+           , textarea
+                [ classList
+                    [ ( "br2", True )
+                    , ( "pa2", True )
+                    , ( "mb2", True )
+                    , ( "input-reset", True )
+                    , ( "ba", True )
+                    , ( "b--light-silver", model.contactEditDisabled )
+                    , ( "light-silver", model.contactEditDisabled )
+                    , ( "bg-transparent", model.contactEditDisabled )
+                    , ( "w-80", True )
+                    , ( "measure", True )
+                    , ( "f6", True )
+                    ]
+                , disabled model.contactEditDisabled
+                , value info.notes
+                ]
+                []
+           ]
         ++ [ input
-                [ class " mt2 b ph3 pv2 input-reset ba bg-transparent grow white f6"
+                [ class " br2 mt2 b ph3 pv2 input-reset ba bg-transparent grow white f6"
                 , type_ "button"
                 , value "Edit"
                 , onClick <| EditContact model
