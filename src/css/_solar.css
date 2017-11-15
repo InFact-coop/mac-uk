@@ -110,7 +110,7 @@ ul.solarsystem li.sun span {
   border-radius: 100%;
 }
 
-ul.solarsystem li.mercury {
+ul.solarsystem li.peers {
   width:13.5vw;
   height:13.5vw;
   border-radius: 100%;
@@ -119,10 +119,22 @@ ul.solarsystem li.mercury {
   z-index: 99;
 }
 
-ul.solarsystem li.mercury span {
-  background: #b6bac5;
+ul.solarsystem .peers__1 {
+  background-color: var(--green);
+  top:1.8vw;
+  left:9.9vw;
+}
+
+ul.solarsystem .peers__2 {
+  background-color: var(--light-green);
   top:1.8vw;
   left:0.9vw;
+}
+
+ul.solarsystem .peers__3 {
+  background-color: var(--washed-green);
+  top: 10.8vw;
+  left: 3.9vw;
 }
 
 ul.solarsystem li.venus {
@@ -284,9 +296,9 @@ ul.solarsystem li.earth span {
   -moz-animation-name: moon;
 }
 
-ul.solarsystem li.mercury {
-  -webkit-animation-duration: 120s;
-  -moz-animation-duration: 120s;
+ul.solarsystem li.peers {
+  -webkit-animation-duration: 80s;
+  -moz-animation-duration: 80s;
 }
 
 ul.solarsystem li.venus {
