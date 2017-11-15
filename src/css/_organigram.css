@@ -46,7 +46,7 @@
   border: 4px solid #fff;
   text-align: center;
   overflow: hidden;
-  font-size: 0.7em;
+  font-size: 1em;
   text-decoration: none;
   font-weight: bold;
   color: #333;
@@ -93,7 +93,10 @@
   position: absolute;
   width: 100%;
 }
-
+.departments > li:first-child a,
+.subdirector > li:first-child a {
+  width: 200% !important;
+}
 .subdirector > li:first-child,
 .departments > li:first-child {
   width: 18.59894921190893%;
@@ -126,7 +129,7 @@
 }
 
 .departments > li:first-child a {
-  right: 25px;
+  right: 75px;
 }
 
 .department:first-child,
