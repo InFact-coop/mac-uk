@@ -11,16 +11,6 @@ bottomNav model =
         [ navbarContent model ]
 
 
-
--- navbarLink : ( String, String ) -> Html Msg
--- navbarLink ( linkStr, name ) =
---     li [ class "list dib mh4 mv3" ]
---         [ a [ class "link dim white b", href ("/#" ++ linkStr) ]
---             [ img [ class "mw2 mh2 rotate-180", src "assets/arrow.png" ] []
---             ]
---         ]
-
-
 navbarContent : Model -> Html Msg
 navbarContent model =
     let
