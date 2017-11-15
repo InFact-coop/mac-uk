@@ -108,7 +108,7 @@ organigram model =
                                                 ]
                                             , ul [ class "sections" ]
                                                 [ li [ class "section" ]
-                                                    [ a [ href "#contactcontacts", class "aco-sizing" ]
+                                                    [ a [ href "#contact", class "aco-sizing" ]
                                                         [ span []
                                                             [ text "Education Access Officer" ]
                                                         ]
