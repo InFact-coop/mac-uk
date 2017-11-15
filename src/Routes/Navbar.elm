@@ -7,7 +7,7 @@ import Types exposing (..)
 
 navbar : Model -> Html Msg
 navbar model =
-    ul [ class "dib ma0 bg-green w-100 pa2" ]
+    ul [ class "dn ma0 bg-green w-100 pa2" ]
         navbarContent
 
 
@@ -18,4 +18,4 @@ navbarLink ( linkStr, name ) =
 
 navbarContent : List (Html Msg)
 navbarContent =
-    List.map navbarLink [ ( "home", "Home" ), ( "solar", "Solar" ) ]
+    List.map navbarLink [ ( "home", "Home" ), ( "solar", "Solar" ), ( "organigram", "Organigram" ), ( "contact", "Contact" ) ]
