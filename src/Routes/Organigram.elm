@@ -10,7 +10,7 @@ organigram model =
     let
         org =
             model.focusedOrganisation
-                |> Maybe.withDefault REACHteam
+                |> Maybe.withDefault REACHService
     in
         div [ class "w-60-ns center" ]
             [ h1 [ class "f3 white pa2 ma2" ] [ text ("Structure of " ++ (displayOrganisation org) ++ " team") ]
@@ -128,14 +128,41 @@ organigram model =
 displayOrganisation : Organisation -> String
 displayOrganisation organisation =
     case organisation of
-        REACHteam ->
-            "LB Barnet leaving care REACH"
+        Mother ->
+            "Mother"
 
-        ChildrenServices ->
-            "LB Children Services"
+        Father ->
+            "Father"
 
-        CommunityPartners ->
-            "Communities"
+        Friend ->
+            "Friend"
 
-        SocialCareDirect ->
-            "Social Care Direct"
+        ArtAgainstKnives ->
+            "Art Against Knives"
+
+        WoodsideCentre ->
+            "Woodside Centre"
+
+        MacUK ->
+            "MAC-UK"
+
+        REACHService ->
+            "REACH Service"
+
+        REACHSteering ->
+            "REACH Steering Group"
+
+        GangCalling ->
+            "Gang Calling"
+
+        BarnetCouncil ->
+            "Barnet Council"
+
+        CCG ->
+            "CCG"
+
+        HealthEducation ->
+            "Health Education England"
+
+        OFSTED ->
+            "OFSTED"

@@ -53,10 +53,19 @@ type NetworkHub
 
 
 type Organisation
-    = REACHteam
-    | ChildrenServices
-    | CommunityPartners
-    | SocialCareDirect
+    = Mother
+    | Father
+    | Friend
+    | ArtAgainstKnives
+    | WoodsideCentre
+    | MacUK
+    | REACHService
+    | REACHSteering
+    | GangCalling
+    | BarnetCouncil
+    | CCG
+    | HealthEducation
+    | OFSTED
 
 
 
