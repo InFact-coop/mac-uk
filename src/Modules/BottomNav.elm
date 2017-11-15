@@ -42,7 +42,7 @@ navbarContent model =
                     "home"
     in
         li [ class "list dib mh4 mv3" ]
-            [ a [ class "link #30white b dib", href ("/#" ++ navLinkBack) ]
+            [ a [ class "link white b dib", href ("/#" ++ navLinkBack) ]
                 [ img [ class "mw2 mh2 myRotate", src "assets/arrow.png" ] []
                 ]
             ]
