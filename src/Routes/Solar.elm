@@ -20,6 +20,8 @@ solar model =
                     , ( "Local", SchoolsCommunity )
                     , ( "National", HealthHousingEmployabilitySafety )
                     , ( "Cultural", CulturePolitics )
+
+                    -- , ( "X", Nothing )
                     ]
                 )
             , solarSystem model

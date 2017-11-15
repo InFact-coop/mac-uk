@@ -49,9 +49,22 @@ ul.solarsystem li.border {
 ul.solarsystem li span {
   display: block;
   position: absolute;
+  border-radius: 100%;
+}
+
+ul.solarsystem li span.small {
   width: 2.5vw;
   height: 2.5vw;
-  border-radius: 100%;
+}
+
+ul.solarsystem li span.medium {
+  width: 4.5vw;
+  height: 4.5vw;
+}
+
+ul.solarsystem li span.large {
+  width: 5.5vw;
+  height: 5.5vw;
 }
 
 ul.solarsystem li.active {
@@ -72,14 +85,14 @@ ul.solarsystem li.active.earth .moon {
 }
 
 ul.solarsystem li.sun {
-  width:5.4vw;
-  height:5.4vw;
+  width:4vw;
+  height:4vw;
   border-radius: 100%;
   background: #fc3;
   background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.22, rgb(204, 153, 0)), color-stop(1, rgb(255, 219, 112)));
   background-image: -moz-linear-gradient( center bottom, rgb(204, 153, 0) 22%, rgb(255, 219, 112) 100%);
-  top:42.300000000000004vw;
-  left:42.300000000000004vw;
+  top:43vw;
+  left:43vw;
   border: none;
   box-shadow: 0 0 6.75vw #c90;
   z-index: 100;
@@ -134,8 +147,8 @@ ul.solarsystem li.earth {
 
 ul.solarsystem li.earth span {
   background: #06c;
-  top:6.300000000000001vw;
-  left: 1.35vw;
+  top: 3.3vw;
+  left: 0.35vw;
 }
 
 ul.solarsystem li.earth span.moon {
@@ -176,8 +189,6 @@ ul.solarsystem li.asteroids_meteorids {
 }
 
 ul.solarsystem li.jupiter {
-  width:46.800000000000004vw;
-  height:46.800000000000004vw;
   border-radius: 100%;
   top:21.6vw;
   left:21.6vw;
@@ -248,8 +259,6 @@ ul.solarsystem li.pluto span {
   background: #9c8a7c;
   top:16.2vw;
   left:8.1vw;
-  width:0.9vw;
-  height:0.9vw;
 }
 /* CSS3 Animations */
 
