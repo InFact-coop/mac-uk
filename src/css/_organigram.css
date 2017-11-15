@@ -67,7 +67,13 @@
 /*
 
  */
-
+.cp-sizing {
+  width: 175%;
+}
+.aco-sizing {
+  width: 144% !important;
+  height: 120% !important;
+}
 .administration > li > a {
   margin-bottom: 25px;
 }
