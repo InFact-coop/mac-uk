@@ -82,8 +82,7 @@ ul.solarsystem li.active span {
   transform: scale(1);
 }
 
-ul.solarsystem li.active.sun span,
-ul.solarsystem li.active.earth .moon {
+ul.solarsystem li.active.sun span {
   border: none;
   box-shadow: none;
 }
@@ -134,7 +133,7 @@ ul.solarsystem .peers__2 {
 ul.solarsystem .peers__3 {
   background-color: var(--washed-green);
   top: 10.8vw;
-  left: 3.9vw;
+  left: 3.1vw;
 }
 
 ul.solarsystem li.venus {
@@ -152,7 +151,7 @@ ul.solarsystem li.venus span {
   left:20.700000000000003vw;
 }
 
-ul.solarsystem li.earth {
+ul.solarsystem li.authority {
   width:28.8vw;
   height:28.8vw;
   border-radius: 100%;
@@ -161,23 +160,19 @@ ul.solarsystem li.earth {
   z-index: 97;
 }
 
-ul.solarsystem li.earth span {
+ul.solarsystem .authority__1  {
   background: #06c;
   top: 3.3vw;
   left: 0.35vw;
 }
 
-ul.solarsystem li.earth span.moon {
-  width: 0.45vw;
-  height: 0.45vw;
-  border-radius: 100%;
-  background: #ccc;
-  top: 1.35vw;
-  left:1.8vw;
-  display: none;
+ul.solarsystem .authority__2  {
+  background: #06c;
+  top: 22.3vw;
+  left: 1.35vw;
 }
 
-ul.solarsystem li.mars {
+ul.solarsystem li.voluntary__local {
   width:37.800000000000004vw;
   height:37.800000000000004vw;
   border-radius: 100%;
@@ -186,10 +181,16 @@ ul.solarsystem li.mars {
   z-index: 96;
 }
 
-ul.solarsystem li.mars span {
+ul.solarsystem .voluntary__local--1 {
   background: #aa0200;
   top:0;
   left:12.600000000000001vw;
+}
+
+ul.solarsystem .voluntary__local--2 {
+  background: #aa0200;
+  top:17vw;
+  left:31.6vw;
 }
 
 ul.solarsystem li.asteroids_meteorids {
@@ -287,7 +288,7 @@ ul.solarsystem li {
   -moz-animation-name: orbit;
 }
 
-ul.solarsystem li.earth span {
+ul.solarsystem li.local span {
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
   -webkit-animation-name: moon;
@@ -306,17 +307,17 @@ ul.solarsystem li.venus {
   -moz-animation-duration: 120s;
 }
 
-ul.solarsystem li.earth {
+ul.solarsystem li.authority {
   -webkit-animation-duration: 170s;
   -moz-animation-duration: 170s;
 }
 
-ul.solarsystem li.earth span {
+ul.solarsystem li.authority span {
   -webkit-animation-duration: 170s;
   -moz-animation-duration: 170s;
 }
 
-ul.solarsystem li.mars {
+ul.solarsystem li.voluntary__local {
   -webkit-animation-duration: 200s;
   -moz-animation-duration: 200s;
 }

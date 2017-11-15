@@ -33,17 +33,21 @@ solarSystem model =
                     []
                 ]
             ]
-        , li [ classes [ "earth", getPlanetBlurClass model SchoolsCommunity ], onClick (FocusOrganisation ChildrenServices) ]
-            [ span [ class "medium" ]
+        , li [ classes [ "authority", getPlanetBlurClass model SchoolsCommunity ], onClick (FocusOrganisation ChildrenServices) ]
+            [ span [ class "medium authority__1" ]
+                []
+            , span [ class "medium authority__2" ]
                 []
             ]
         , li
             [ classes
-                [ "mars"
+                [ "voluntary__local"
                 , getPlanetBlurClass model SchoolsCommunity
                 ]
             ]
-            [ span [ class "large" ]
+            [ span [ class "large voluntary__local--1" ]
+                []
+            , span [ class "large voluntary__local--2" ]
                 []
             ]
         , li
