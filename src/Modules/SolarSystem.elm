@@ -9,86 +9,99 @@ import Types exposing (..)
 solarSystem : Model -> Html Msg
 solarSystem model =
     ul [ class "solarsystem" ]
-        [ li [ class "sun" ]
+        [ li [ classes [ "sun", getPlanetBlurClass model PeersFamily ] ]
             [ a [ href "#sun" ]
                 [ span []
                     []
                 ]
             ]
-        , li [ classes [ "mercury", getPlanetBlurClass model PeersFamily ] ]
-            [ a [ href "#mercury" ]
-                [ span []
-                    []
-                ]
+        , li [ classes [ "peers", getPlanetBlurClass model PeersFamily ] ]
+            [ span [ class "small peers__1" ]
+                []
             ]
-        , li [ classes [ "venus", "border", getPlanetBlurClass model PeersFamily ] ]
+        , li [ classes [ "peers", getPlanetBlurClass model PeersFamily ] ]
+            [ span [ class "small peers__2" ]
+                []
+            ]
+        , li [ classes [ "peers", getPlanetBlurClass model PeersFamily ] ]
+            [ span [ class "small peers__3" ]
+                []
+            ]
+        , li [ classes [ "venus", "border", getOrbitBlurClass model [ PeersFamily, SchoolsCommunity ] ] ]
             [ a [ href "#venus" ]
-                [ span []
+                [ span [ class "none" ]
                     []
                 ]
             ]
-        , li [ classes [ "earth", getPlanetBlurClass model SchoolsCommunity ], onClick (FocusOrganisation ChildrenServices) ]
-            [ span []
-                [ span [ class "moon" ]
-                    []
-                ]
-            ]
-        , li
-            [ classes
-                [ "mars"
-                , getPlanetBlurClass model SchoolsCommunity
-                ]
-            ]
-            [ span []
+        , li [ classes [ "authority", getPlanetBlurClass model SchoolsCommunity ], onClick (FocusOrganisation ChildrenServices) ]
+            [ span [ class "medium authority__1" ]
+                []
+            , span [ class "medium authority__2" ]
                 []
             ]
         , li
             [ classes
-                [ "asteroids_meteorids"
+                [ "voluntary__local"
                 , getPlanetBlurClass model SchoolsCommunity
                 ]
             ]
-            [ span []
+            [ span [ class "large voluntary__local--1" ]
+                []
+            , span [ class "large voluntary__local--2" ]
                 []
             ]
         , li
             [ classes
                 [ "jupiter"
                 , "border"
-                , getPlanetBlurClass model HealthHousingEmployabilitySafety
+                , getOrbitBlurClass model [ SchoolsCommunity, HealthHousingEmployabilitySafety ]
                 ]
             , onClick (FocusOrganisation SocialCareDirect)
             ]
-            [ span [ class (getPlanetBlurClass model HealthHousingEmployabilitySafety) ]
-                []
+            [ a [ href "#venus" ]
+                [ span [ class "none" ]
+                    []
+                ]
+
+            -- span [ classes [ "large", getPlanetBlurClass model HealthHousingEmployabilitySafety ] ]
+            --     []
             ]
         , li [ classes [ "saturn", getPlanetBlurClass model HealthHousingEmployabilitySafety ], onClick (FocusOrganisation REACHteam) ]
-            [ span []
-                [ span [ class "ring" ]
-                    [ text "" ]
-                ]
+            [ span [ class "medium" ]
+                []
             ]
-        , li [ classes [ "uranus", "border", getPlanetBlurClass model CulturePolitics ] ]
+        , li [ classes [ "uranus", "border", getOrbitBlurClass model [ HealthHousingEmployabilitySafety, CulturePolitics ] ] ]
             [ a [ href "#uranus" ]
-                [ span [ classes [ "1", getPlanetBlurClass model CulturePolitics ] ]
-                    []
-                , span [ classes [ "2", getPlanetBlurClass model CulturePolitics ] ]
+                [ span [ classes [ "none", getPlanetBlurClass model CulturePolitics ] ]
                     []
                 ]
             ]
         , li [ classes [ "neptune", getPlanetBlurClass model CulturePolitics ] ]
             [ a [ href "#neptune" ]
-                [ span []
+                [ span [ class "medium" ]
                     []
                 ]
             ]
-        , li [ classes [ "pluto", getPlanetBlurClass model CulturePolitics ] ]
+        , li [ classes [ "pluto", getOrbitBlurClass model [ CulturePolitics ] ] ]
             [ a [ href "#pluto" ]
-                [ span []
+                [ span [ class "none" ]
                     []
                 ]
             ]
         ]
+
+
+getOrbitBlurClass : Model -> List OrganisationGroup -> String
+getOrbitBlurClass model orgGroups =
+    case model.focusedGroup of
+        Nothing ->
+            ""
+
+        Just focussedGroup ->
+            if List.member focussedGroup orgGroups then
+                ""
+            else
+                "blur"
 
 
 getPlanetBlurClass : Model -> OrganisationGroup -> String

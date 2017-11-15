@@ -14,12 +14,14 @@ solar model =
             getOrganisationTitleAndDescription model.focusedOrganisation
     in
         section [ class "clearfix" ]
-            [ footer [ class "footer dib" ]
-                (List.map viewFooterButton
-                    [ ( "Peers & Family", PeersFamily )
-                    , ( "School, Community & Neighbourhood", SchoolsCommunity )
-                    , ( "health, housing, employability & safety", HealthHousingEmployabilitySafety )
-                    , ( "culture and politics", CulturePolitics )
+            [ section [ class "dib" ]
+                (List.map viewOrganisationButton
+                    [ ( "Personal", PeersFamily )
+                    , ( "Local", SchoolsCommunity )
+                    , ( "National", HealthHousingEmployabilitySafety )
+                    , ( "Cultural", CulturePolitics )
+
+                    -- , ( "X", Nothing )
                     ]
                 )
             , solarSystem model
@@ -34,9 +36,9 @@ solar model =
             ]
 
 
-viewFooterButton : ( String, OrganisationGroup ) -> Html Msg
-viewFooterButton ( label, orgGroup ) =
-    li [ class "dib pa2 ma2", onClick (FocusGroup orgGroup) ] [ text label ]
+viewOrganisationButton : ( String, OrganisationGroup ) -> Html Msg
+viewOrganisationButton ( label, orgGroup ) =
+    li [ class "dib pa3 br-pill ma2 bg-dark-green white", onClick (FocusGroup orgGroup) ] [ text label ]
 
 
 getOrganisationTitleAndDescription : Maybe Organisation -> ( String, String )
