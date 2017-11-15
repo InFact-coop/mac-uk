@@ -12,6 +12,7 @@ import Routes.Organigram exposing (..)
 import Routes.NotFound exposing (..)
 import Routes.Navbar exposing (..)
 import Routes.Contact exposing (..)
+import Modules.BottomNav exposing (..)
 
 
 view : Model -> Html Msg
@@ -35,6 +36,6 @@ view model =
                     notFound
     in
         div []
-            [ navbar model
+            [ bottomNav model
             , page
             ]

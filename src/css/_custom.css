@@ -14,3 +14,7 @@ body {
 button {
   font-family: var(--sans-serif);
 }
+
+.myRotate {
+  transform: rotate(180deg);
+}
