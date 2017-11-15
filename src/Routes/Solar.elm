@@ -16,10 +16,10 @@ solar model =
         section [ class "clearfix" ]
             [ section [ class "dib" ]
                 (List.map viewOrganisationButton
-                    [ ( "Personal", PeersFamily )
-                    , ( "Local", SchoolsCommunity )
-                    , ( "National", HealthHousingEmployabilitySafety )
-                    , ( "Cultural", CulturePolitics )
+                    [ ( "Personal", PeersFamily, model )
+                    , ( "Local", SchoolsCommunity, model )
+                    , ( "National", HealthHousingEmployabilitySafety, model )
+                    , ( "Cultural", CulturePolitics, model )
 
                     -- , ( "X", Nothing )
                     ]
@@ -36,9 +36,26 @@ solar model =
             ]
 
 
-viewOrganisationButton : ( String, OrganisationGroup ) -> Html Msg
-viewOrganisationButton ( label, orgGroup ) =
-    li [ class "dib pa3 br-pill ma2 bg-dark-green white", onClick (FocusGroup orgGroup) ] [ text label ]
+toggleOrganisationButtonStyle : Model -> OrganisationGroup -> List String
+toggleOrganisationButtonStyle model orgGroup =
+    case model.focusedGroup of
+        Nothing ->
+            [ "white", "bg-dark-green" ]
+
+        Just focusedGroup ->
+            if focusedGroup == orgGroup then
+                [ "dark-green", "bg-white" ]
+            else
+                [ "white", "bg-dark-green" ]
+
+
+viewOrganisationButton : ( String, OrganisationGroup, Model ) -> Html Msg
+viewOrganisationButton ( label, orgGroup, model ) =
+    li
+        [ classes <| [ "dib", "pa3", "br-pill", "ma2" ] ++ (toggleOrganisationButtonStyle model orgGroup)
+        , onClick (FocusGroup orgGroup)
+        ]
+        [ text label ]
 
 
 getOrganisationTitleAndDescription : Maybe Organisation -> ( String, String )
