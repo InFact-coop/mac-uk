@@ -53,6 +53,14 @@ contactItem ( field, data, bool ) =
         ]
 
 
+toggleContactButtonText : Bool -> String
+toggleContactButtonText bool =
+    if bool then
+        "edit"
+    else
+        "save"
+
+
 contactContent : ContactInfo -> Model -> List (Html Msg)
 contactContent info model =
     List.map contactItem
@@ -69,6 +77,7 @@ contactContent info model =
            , textarea
                 [ classList
                     [ ( "br2", True )
+                    , ( "dib", True )
                     , ( "pa2", True )
                     , ( "mb2", True )
                     , ( "input-reset", True )
@@ -86,9 +95,9 @@ contactContent info model =
                 []
            ]
         ++ [ input
-                [ class " br2 mt2 b ph3 pv2 input-reset ba bg-transparent grow white f6"
+                [ class "db center br2 mt2 b ph3 pv2 input-reset ba bg-transparent grow white f6"
                 , type_ "button"
-                , value "Edit"
+                , value <| toggleContactButtonText model.contactEditDisabled
                 , onClick <| EditContact model
                 ]
                 []
