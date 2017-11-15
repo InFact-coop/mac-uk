@@ -56,9 +56,9 @@ contactItem ( field, data, bool ) =
 toggleContactButtonText : Bool -> String
 toggleContactButtonText bool =
     if bool then
-        "edit"
+        "Edit"
     else
-        "save"
+        "Save"
 
 
 contactContent : ContactInfo -> Model -> List (Html Msg)
