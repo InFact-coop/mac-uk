@@ -12,7 +12,7 @@ contact info model =
         htmlStuff =
             contactContent info model
     in
-        Html.form [ class "w-60-ns center" ] htmlStuff
+        Html.form [ class "w-80 pa2 center" ] htmlStuff
 
 
 testDetails : ContactInfo
@@ -33,7 +33,7 @@ contactItem ( field, data, bool ) =
     div []
         [ label [ class "db fw4 lh-copy f6" ] [ text field ]
         , input
-            [ class "pa2 input-reset ba bg-transparent w-100 measure"
+            [ class "pa2 mb2 input-reset ba bg-transparent w-80 measure"
             , disabled bool
             , value data
             ]
@@ -55,7 +55,7 @@ contactContent info model =
         , ( "MAC-UK Notes:", info.notes, model.contactEditDisabled )
         ]
         ++ [ input
-                [ class "b ph3 pv2 input-reset ba bg-transparent grow white f6"
+                [ class " mt2 b ph3 pv2 input-reset ba bg-transparent grow white f6"
                 , type_ "button"
                 , value "Edit"
                 , onClick <| EditContact model
