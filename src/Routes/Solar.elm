@@ -13,21 +13,23 @@ solar model =
         ( title, description ) =
             getOrganisationTitleAndDescription model.focusedOrganisation
     in
-        section [ class "clearfix" ]
-            [ section [ class "dib" ]
-                (List.map viewOrganisationButton
-                    [ ( "Personal", PeersFamily )
-                    , ( "Local", SchoolsCommunity )
-                    , ( "National", HealthHousingEmployabilitySafety )
-                    , ( "Cultural", CulturePolitics )
+        div []
+            [ section [ class "clearfix" ]
+                [ section [ class "dib" ]
+                    (List.map viewOrganisationButton
+                        [ ( "Personal", PeersFamily, model )
+                        , ( "Local", SchoolsCommunity, model )
+                        , ( "National", HealthHousingEmployabilitySafety, model )
+                        , ( "Cultural", CulturePolitics, model )
 
-                    -- , ( "X", Nothing )
-                    ]
-                )
-            , solarSystem model
-            , div [ class "ma3 fr" ]
+                        -- , ( "X", Nothing )
+                        ]
+                    )
+                , solarSystem model
+                ]
+            , div [ class "ma3" ]
                 [ h4 [ class "f3 white pa2 ma0" ] [ text title ]
-                , div [ class "f5 white pa2 db br2 translucent" ]
+                , p [ class "f5 white pa2 db br2 translucent" ]
                     [ text description
                     , a [ class "db pa1", href "#organigram" ]
                         [ img [ src "https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-info-6.png&r=255&g=255&b=255", class "mw2" ] [] ]
@@ -36,9 +38,26 @@ solar model =
             ]
 
 
-viewOrganisationButton : ( String, OrganisationGroup ) -> Html Msg
-viewOrganisationButton ( label, orgGroup ) =
-    li [ class "dib pa3 br-pill ma2 bg-dark-green white", onClick (FocusGroup orgGroup) ] [ text label ]
+toggleOrganisationButtonStyle : Model -> OrganisationGroup -> List String
+toggleOrganisationButtonStyle model orgGroup =
+    case model.focusedGroup of
+        Nothing ->
+            [ "white", "bg-dark-green" ]
+
+        Just focusedGroup ->
+            if focusedGroup == orgGroup then
+                [ "dark-green", "bg-white" ]
+            else
+                [ "white", "bg-dark-green" ]
+
+
+viewOrganisationButton : ( String, OrganisationGroup, Model ) -> Html Msg
+viewOrganisationButton ( label, orgGroup, model ) =
+    li
+        [ classes <| [ "dib", "pa3", "br-pill", "ma2" ] ++ (toggleOrganisationButtonStyle model orgGroup)
+        , onClick (FocusGroup orgGroup)
+        ]
+        [ text label ]
 
 
 getOrganisationTitleAndDescription : Maybe Organisation -> ( String, String )
@@ -49,14 +68,41 @@ getOrganisationTitleAndDescription focusedOrganisation =
 
         Just focusedOrganisation ->
             case focusedOrganisation of
-                REACHteam ->
-                    ( "REACH team", " a multi-professional and multi-disciplinary team with expertise in safeguarding, mental health, parenting, education and learning, health and communication to jointly assess, plan and intervene with young people presenting with high risk/high vulnerability" )
+                Mother ->
+                    ( "Mother", "" )
 
-                ChildrenServices ->
-                    ( "Barnet Children and Young People Plan", "A partnership with children, young people and different organisations that has produced a new child-friendly plan for 2016 - 2020 that reflects the priorities, needs and aspirations of the local population." )
+                Father ->
+                    ( "Father", "" )
 
-                CommunityPartners ->
-                    ( "Communities", "to be continued" )
+                Friend ->
+                    ( "Friend", "" )
 
-                SocialCareDirect ->
-                    ( "Social Care Direct", "For adults with social care needs and their carers, advice and information about adult social care services and safeguarding alerts" )
+                ArtAgainstKnives ->
+                    ( "Art Against Knives", "a young, award-winning charity working with London’s most isolated communities to prevent serious youth violence; through specialist, creative and consistent interventions." )
+
+                WoodsideCentre ->
+                    ( "Woodside Centre", "GP Surgery" )
+
+                MacUK ->
+                    ( "MAC-UK", "takes mental health services out of the clinic and into the community with young people for young people." )
+
+                REACHService ->
+                    ( "REACH Service", "Multi-lingual domestic violence/family abuse advice, advocacy and support based in an Accident and Emergency (A&E) department" )
+
+                REACHSteering ->
+                    ( "REACH Steering Group", "advised by a diverse steering group with various expertise in computing, history, archives, and project management" )
+
+                GangCalling ->
+                    ( "Gang Calling", "Local Authority Initiative" )
+
+                BarnetCouncil ->
+                    ( "Barnet Council", "Local Authority Team" )
+
+                CCG ->
+                    ( "CCG", "coordinate and support the 32 London Clinical Commissioning Groups" )
+
+                HealthEducation ->
+                    ( "Health Education England", "Supports the delivery of healthcare to patients in England" )
+
+                OFSTED ->
+                    ( "OFSTED", "inspect and regulate services that care for children and young people, and services providing education and skills for learners of all ages" )

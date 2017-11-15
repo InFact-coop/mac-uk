@@ -220,7 +220,7 @@ ul.solarsystem li.jupiter span {
   left:16.2vw;
 }
 
-ul.solarsystem li.saturn {
+ul.solarsystem li.national {
   width:57.6vw;
   height:57.6vw;
   border-radius: 100%;
@@ -244,7 +244,7 @@ ul.solarsystem li.uranus span {
   left:27vw;
 }
 
-ul.solarsystem li.neptune {
+ul.solarsystem li.political {
   width:77.39999999999999vw;
   height:77.39999999999999vw;
   border-radius: 100%;
@@ -253,11 +253,18 @@ ul.solarsystem li.neptune {
   z-index: 92;
 }
 
-ul.solarsystem li.neptune span {
+ul.solarsystem .political__1{
   background: #77c2ec;
-  top:5.4vw;
+  top:69.4vw;
   left:17.1vw;
 }
+
+ul.solarsystem .political__2{
+  background: #77c2ec;
+  top:4vw;
+  left:56.1vw;
+}
+
 
 ul.solarsystem li.pluto {
   width:84.60000000000001vw;
@@ -332,7 +339,7 @@ ul.solarsystem li.jupiter {
   -moz-animation-duration: 140s;
 }
 
-ul.solarsystem li.saturn {
+ul.solarsystem li.national {
   -webkit-animation-duration: 140s;
   -moz-animation-duration: 140s;
 }
@@ -342,7 +349,7 @@ ul.solarsystem li.uranus {
   -moz-animation-duration: 140s;
 }
 
-ul.solarsystem li.neptune {
+ul.solarsystem li.political {
   -webkit-animation-duration: 140s;
   -moz-animation-duration: 140s;
 }
@@ -388,10 +395,18 @@ ul.solarsystem li.pluto {
   }
 }
 
-ul.solarsystem li.saturn span {
+ul.solarsystem .national__1{
   background: #dfd3a9;
   top:0;
   left:21.6vw;
+  width:1.8vw;
+  height:1.8vw;
+}
+
+ul.solarsystem .national__2{
+  background: #dfd3a9;
+  top:52vw;
+  left: 36.6vw;
   width:1.8vw;
   height:1.8vw;
 }
