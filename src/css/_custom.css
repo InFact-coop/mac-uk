@@ -33,4 +33,6 @@ button {
 
 .bg-radial-light-yellow {
   background: radial-gradient(#fbf1a9 40%, #ffffff);
-}
+
+.myRotate {
+  transform: rotate(180deg);
