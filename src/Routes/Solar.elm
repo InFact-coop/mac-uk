@@ -16,10 +16,10 @@ solar model =
         section [ class "clearfix" ]
             [ section [ class "dib" ]
                 (List.map viewOrganisationButton
-                    [ ( "Peers & Family", PeersFamily )
-                    , ( "School, Community & Neighbourhood", SchoolsCommunity )
-                    , ( "health, housing, employability & safety", HealthHousingEmployabilitySafety )
-                    , ( "culture and politics", CulturePolitics )
+                    [ ( "Personal", PeersFamily )
+                    , ( "Local", SchoolsCommunity )
+                    , ( "National", HealthHousingEmployabilitySafety )
+                    , ( "Cultural", CulturePolitics )
                     ]
                 )
             , solarSystem model
@@ -36,7 +36,7 @@ solar model =
 
 viewOrganisationButton : ( String, OrganisationGroup ) -> Html Msg
 viewOrganisationButton ( label, orgGroup ) =
-    li [ class "dib pa2 ma2", onClick (FocusGroup orgGroup) ] [ text label ]
+    li [ class "dib pa3 br-pill ma2 bg-dark-green white", onClick (FocusGroup orgGroup) ] [ text label ]
 
 
 getOrganisationTitleAndDescription : Maybe Organisation -> ( String, String )
