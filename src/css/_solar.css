@@ -67,6 +67,10 @@ ul.solarsystem li span.large {
   height: 5.5vw;
 }
 
+ul.solarsystem li span.none {
+  display: none;
+}
+
 ul.solarsystem li.active {
   border-color: #aa4200;
 }
@@ -190,17 +194,17 @@ ul.solarsystem li.asteroids_meteorids {
 
 ul.solarsystem li.jupiter {
   border-radius: 100%;
-  top:21.6vw;
-  left:21.6vw;
+  top:23vw;
+  left:23vw;
+  width: 44vw;
+  height: 44vw;
   z-index: 95;
 }
 
 ul.solarsystem li.jupiter span {
   background: #e0ae6f;
   top:16.2vw;
-  left:0;
-  height:1.8vw;
-  width:1.8vw;
+  left:16.2vw;
 }
 
 ul.solarsystem li.saturn {
