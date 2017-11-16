@@ -31,8 +31,8 @@ solar model =
                 [ h4 [ class "f3 white pa2 ma0" ] [ text title ]
                 , p [ class "f5 white pa2 db br2 translucent" ]
                     [ text description
-                    , a [ class "db pa1", href "#organigram" ]
-                        [ img [ src "https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-info-6.png&r=255&g=255&b=255", class "mw2" ] [] ]
+                    , a [ class "db pa1 br-100 bg-white w2 center h2 mt2 mb2", href "#organigram" ]
+                        [ img [ src "./assets/organigram.svg", class "ma1" ] [] ]
                     ]
                 ]
             ]
