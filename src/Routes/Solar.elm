@@ -87,7 +87,7 @@ getOrganisationTitleAndDescription focusedOrganisation =
                     ( "MAC-UK", "takes mental health services out of the clinic and into the community with young people for young people." )
 
                 REACHService ->
-                    ( "REACH Service", "Multi-lingual domestic violence/family abuse advice, advocacy and support based in an Accident and Emergency (A&E) department" )
+                    ( "REACH Service", "multi-disciplinary team to support young people and their families in Barnet" )
 
                 REACHSteering ->
                     ( "REACH Steering Group", "advised by a diverse steering group with various expertise in computing, history, archives, and project management" )
@@ -99,7 +99,7 @@ getOrganisationTitleAndDescription focusedOrganisation =
                     ( "Barnet Council", "Local Authority Team" )
 
                 CCG ->
-                    ( "CCG", "coordinate and support the 32 London Clinical Commissioning Groups" )
+                    ( "CCG", "Clinical Commissioning Group for Barnet" )
 
                 HealthEducation ->
                     ( "Health Education England", "Supports the delivery of healthcare to patients in England" )
