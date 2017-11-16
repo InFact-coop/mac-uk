@@ -53,8 +53,8 @@ ul.solarsystem li span {
 }
 
 ul.solarsystem li span.small {
-  width: 2.5vw;
-  height: 2.5vw;
+  width: 3.5vw;
+  height: 3.5vw;
 }
 
 ul.solarsystem li span.medium {
@@ -127,7 +127,7 @@ ul.solarsystem .peers__1 {
 ul.solarsystem .peers__2 {
   background-color: var(--light-green);
   top:1.8vw;
-  left:0.9vw;
+  left:0vw;
 }
 
 ul.solarsystem .peers__3 {
