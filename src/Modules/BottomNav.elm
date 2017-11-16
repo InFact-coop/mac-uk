@@ -7,7 +7,7 @@ import Types exposing (..)
 
 bottomNav : Model -> Html Msg
 bottomNav model =
-    ul [ class "fixed bottom-0 ma0 bg-black w-100 pa0 h3 flex justify-between db" ]
+    ul [ class "fixed bottom-0 ma0 pa0 h3 flex justify-between db" ]
         [ navbarContent model ]
 
 
