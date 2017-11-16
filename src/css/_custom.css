@@ -15,6 +15,24 @@ button {
   font-family: var(--sans-serif);
 }
 
+.bg-radial-light-pink {
+  background: radial-gradient(#ffa3d7 40%, #fbd8ec);
+}
+
+.bg-radial-yellow {
+  background: radial-gradient(#ffd700 40%, #fffdf1);
+}
+
+.bg-radial-light-green {
+  background: radial-gradient(#c7ffdf 40%, #ffffff);
+}
+
+.bg-radial-light-blue {
+  background: radial-gradient(#96ccff 40%, #eaf5ff);
+}
+
+.bg-radial-light-yellow {
+  background: radial-gradient(#fbf1a9 40%, #ffffff);
+
 .myRotate {
   transform: rotate(180deg);
-}
