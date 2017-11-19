@@ -10,107 +10,107 @@ organigram model =
     let
         org =
             model.focusedOrganisation
-                |> Maybe.withDefault REACHteam
+                |> Maybe.withDefault REACHService
     in
         div [ class "w-60-ns center" ]
-            [ h1 [ class "tc f1" ] [ text ("Structure of " ++ (displayOrganisation org) ++ " team") ]
+            [ h1 [ class "f3 white pa2 ma2" ] [ text ("Structure of " ++ (displayOrganisation org) ++ " team") ]
             , div [ class "content" ]
                 [ figure [ class "org-chart cf" ]
                     [ ul [ class "administration" ]
                         [ li []
                             [ ul [ class "director" ]
                                 [ li []
-                                    [ a [ href "#" ]
+                                    [ a [ href "#contact" ]
                                         [ span []
-                                            [ text "Director" ]
+                                            [ text "Service Lead" ]
                                         ]
                                     , ul [ class "subdirector" ]
                                         [ li []
-                                            [ a [ href "#" ]
+                                            [ a [ href "#contact" ]
                                                 [ span []
-                                                    [ text "Assistante Director" ]
+                                                    [ text "Manager" ]
                                                 ]
                                             ]
                                         ]
                                     , ul [ class "departments cf" ]
                                         [ li []
-                                            [ a [ href "#" ]
+                                            [ a [ href "#contact" ]
                                                 [ span []
                                                     [ text "Administration" ]
                                                 ]
                                             ]
                                         , li [ class "department dep-a" ]
-                                            [ a [ href "#" ]
+                                            [ a [ href "#contact" ]
                                                 [ span []
-                                                    [ text "Department A" ]
+                                                    [ text "Social Worker" ]
                                                 ]
                                             , ul [ class "sections" ]
                                                 [ li [ class "section" ]
-                                                    [ a [ href "#" ]
+                                                    [ a [ href "#contact" ]
                                                         [ span []
-                                                            [ text "Section A1" ]
+                                                            [ text "Family Therapist" ]
                                                         ]
                                                     ]
                                                 ]
                                             ]
                                         , li [ class "department dep-b" ]
-                                            [ a [ href "#" ]
+                                            [ a [ href "#contact" ]
                                                 [ span []
-                                                    [ text "Department B" ]
+                                                    [ text "Social Worker" ]
                                                 ]
                                             , ul [ class "sections" ]
                                                 [ li [ class "section" ]
-                                                    [ a [ href "#" ]
+                                                    [ a [ href "#contact" ]
                                                         [ span []
-                                                            [ text "Section B1" ]
+                                                            [ text "Family Practitioner" ]
                                                         ]
                                                     ]
                                                 , li [ class "section" ]
-                                                    [ a [ href "#" ]
+                                                    [ a [ href "#contact" ]
                                                         [ span []
-                                                            [ text "Section B2" ]
+                                                            [ text "Family Practitioner" ]
                                                         ]
                                                     ]
                                                 ]
                                             ]
                                         , li [ class "department dep-c" ]
-                                            [ a [ href "#" ]
+                                            [ a [ href "#contact" ]
                                                 [ span []
-                                                    [ text "Department C" ]
+                                                    [ text "Social Worker" ]
                                                 ]
                                             , ul [ class "sections" ]
-                                                [ li [ class "section" ]
-                                                    [ a [ href "#" ]
+                                                [ li [ class "section cp-sizing" ]
+                                                    [ a [ href "#contact", class "cp-sizing" ]
                                                         [ span []
-                                                            [ text "Section C1" ]
+                                                            [ text "Clinical Psychologist" ]
                                                         ]
                                                     ]
                                                 ]
                                             ]
                                         , li [ class "department dep-d" ]
-                                            [ a [ href "#" ]
+                                            [ a [ href "#contact" ]
                                                 [ span []
-                                                    [ text "Department D" ]
+                                                    [ text "Social Worker" ]
                                                 ]
                                             , ul [ class "sections" ]
-                                                [ li [ class "section" ]
-                                                    [ a [ href "#" ]
-                                                        [ span []
-                                                            [ text "Section D1" ]
-                                                        ]
-                                                    ]
+                                                [-- li [ class "section" ]
+                                                 --     [ a [ href "#contact" ]
+                                                 --         [ span []
+                                                 --             [ text "Education Access Officer" ]
+                                                 --         ]
+                                                 --     ]
                                                 ]
                                             ]
                                         , li [ class "department dep-e" ]
-                                            [ a [ href "#" ]
+                                            [ a [ href "#contact" ]
                                                 [ span []
-                                                    [ text "Department E" ]
+                                                    [ text "Social Worker" ]
                                                 ]
                                             , ul [ class "sections" ]
                                                 [ li [ class "section" ]
-                                                    [ a [ href "#" ]
+                                                    [ a [ href "#contact", class "aco-sizing" ]
                                                         [ span []
-                                                            [ text "Section E1" ]
+                                                            [ text "Education Access Officer" ]
                                                         ]
                                                     ]
                                                 ]
@@ -128,14 +128,41 @@ organigram model =
 displayOrganisation : Organisation -> String
 displayOrganisation organisation =
     case organisation of
-        REACHteam ->
-            "LB Barnet leaving care REACH"
+        Mother ->
+            "Mother"
 
-        ChildrenServices ->
-            "LB Children Services"
+        Father ->
+            "Father"
 
-        CommunityPartners ->
-            "Communities"
+        Friend ->
+            "Friend"
 
-        SocialCareDirect ->
-            "Social Care Direct"
+        ArtAgainstKnives ->
+            "Art Against Knives"
+
+        WoodsideCentre ->
+            "Woodside Centre"
+
+        MacUK ->
+            "MAC-UK"
+
+        REACHService ->
+            "REACH Service"
+
+        REACHSteering ->
+            "REACH Steering Group"
+
+        GangCalling ->
+            "Gang Calling"
+
+        BarnetCouncil ->
+            "Barnet Council"
+
+        CCG ->
+            "CCG"
+
+        HealthEducation ->
+            "Health Education England"
+
+        OFSTED ->
+            "OFSTED"

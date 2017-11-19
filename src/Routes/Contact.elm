@@ -12,7 +12,7 @@ contact info model =
         htmlStuff =
             contactContent info model
     in
-        Html.form [ class "w-60-ns center" ] htmlStuff
+        Html.form [ class "w-80 pa2 center" ] htmlStuff
 
 
 testDetails : ContactInfo
@@ -25,20 +25,40 @@ testDetails =
         "s.lude@reachteam.co.uk"
         "+44712345689"
         "Last meeting - 11/02"
-        "Keen to get more involved"
+        "Keen to get more involved with the organisation, went to the last business meeting,"
 
 
 contactItem : ( String, String, Bool ) -> Html Msg
 contactItem ( field, data, bool ) =
     div []
-        [ label [ class "db fw4 lh-copy f6" ] [ text field ]
+        [ label [ class "db fw4 lh-copy f6  light-silver" ] [ text field ]
         , input
-            [ class "pa2 input-reset ba bg-transparent w-100 measure"
+            [ classList
+                [ ( "br2", True )
+                , ( "pa2", True )
+                , ( "mb2", True )
+                , ( "input-reset", True )
+                , ( "ba", True )
+                , ( "b--light-silver", bool )
+                , ( "light-silver", bool )
+                , ( "bg-transparent", bool )
+                , ( "w-80", True )
+                , ( "measure", True )
+                , ( "f6", True )
+                ]
             , disabled bool
             , value data
             ]
             []
         ]
+
+
+toggleContactButtonText : Bool -> String
+toggleContactButtonText bool =
+    if bool then
+        "Edit"
+    else
+        "Save"
 
 
 contactContent : ContactInfo -> Model -> List (Html Msg)
@@ -50,14 +70,34 @@ contactContent info model =
         , ( "Key Point of Contact:", info.keyContact, model.contactEditDisabled )
         , ( "Primary Needs", info.primaryNeeds, model.contactEditDisabled )
         , ( "Email:", info.email, model.contactEditDisabled )
-        , ( "Phone Number,", info.phoneNumber, model.contactEditDisabled )
+        , ( "Phone Number:", info.phoneNumber, model.contactEditDisabled )
         , ( "Interactions:", info.interactions, model.contactEditDisabled )
-        , ( "MAC-UK Notes:", info.notes, model.contactEditDisabled )
         ]
+        ++ [ label [ class "db fw4 lh-copy f6  light-silver" ] [ text "Notes" ]
+           , textarea
+                [ classList
+                    [ ( "br2", True )
+                    , ( "dib", True )
+                    , ( "pa2", True )
+                    , ( "mb2", True )
+                    , ( "input-reset", True )
+                    , ( "ba", True )
+                    , ( "b--light-silver", model.contactEditDisabled )
+                    , ( "light-silver", model.contactEditDisabled )
+                    , ( "bg-transparent", model.contactEditDisabled )
+                    , ( "w-80", True )
+                    , ( "measure", True )
+                    , ( "f6", True )
+                    ]
+                , disabled model.contactEditDisabled
+                , value info.notes
+                ]
+                []
+           ]
         ++ [ input
-                [ class "b ph3 pv2 input-reset ba bg-transparent grow white f6"
+                [ class "db center br2 mt2 b ph3 pv2 input-reset ba bg-transparent grow white f6"
                 , type_ "button"
-                , value "Edit"
+                , value <| toggleContactButtonText model.contactEditDisabled
                 , onClick <| EditContact model
                 ]
                 []

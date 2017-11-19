@@ -9,86 +9,86 @@ import Types exposing (..)
 solarSystem : Model -> Html Msg
 solarSystem model =
     ul [ class "solarsystem" ]
-        [ li [ class "sun" ]
-            [ a [ href "#sun" ]
-                [ span []
-                    []
-                ]
-            ]
-        , li [ classes [ "mercury", getPlanetBlurClass model PeersFamily ] ]
-            [ a [ href "#mercury" ]
-                [ span []
-                    []
-                ]
-            ]
-        , li [ classes [ "venus", "border", getPlanetBlurClass model PeersFamily ] ]
-            [ a [ href "#venus" ]
-                [ span []
-                    []
-                ]
-            ]
-        , li [ classes [ "earth", getPlanetBlurClass model SchoolsCommunity ], onClick (FocusOrganisation ChildrenServices) ]
+        [ li [ classes [ "sun", getPlanetBlurClass model PeersFamily ] ]
             [ span []
-                [ span [ class "moon" ]
-                    []
-                ]
+                []
             ]
-        , li
-            [ classes
-                [ "mars"
-                , getPlanetBlurClass model SchoolsCommunity
-                ]
+        , li [ classes [ "peers", getPlanetBlurClass model PeersFamily ] ]
+            [ span [ class "small peers__1", onClick (FocusOrganisation Mother) ]
+                []
             ]
-            [ span []
+        , li [ classes [ "peers", getPlanetBlurClass model PeersFamily ] ]
+            [ span [ class "small peers__2", onClick (FocusOrganisation Father) ]
+                []
+            ]
+        , li [ classes [ "peers", getPlanetBlurClass model PeersFamily ] ]
+            [ span [ onClick (FocusOrganisation Friend), class "small peers__3" ]
+                []
+            ]
+        , li [ classes [ "venus", "border", getOrbitBlurClass model [ PeersFamily, SchoolsCommunity ] ] ]
+            [ span [ class "none" ]
+                []
+            ]
+        , li [ classes [ "authority", getPlanetBlurClass model SchoolsCommunity ] ]
+            [ span [ onClick (FocusOrganisation WoodsideCentre), class "medium authority__1" ]
+                []
+            , span [ onClick (FocusOrganisation REACHService), class "medium authority__2" ]
                 []
             ]
         , li
             [ classes
-                [ "asteroids_meteorids"
+                [ "voluntary__local"
                 , getPlanetBlurClass model SchoolsCommunity
                 ]
             ]
-            [ span []
+            [ span [ onClick (FocusOrganisation ArtAgainstKnives), class "large voluntary__local--1" ]
+                []
+            , span [ onClick (FocusOrganisation MacUK), class "large voluntary__local--2" ]
                 []
             ]
         , li
             [ classes
                 [ "jupiter"
                 , "border"
-                , getPlanetBlurClass model HealthHousingEmployabilitySafety
+                , getOrbitBlurClass model [ SchoolsCommunity, HealthHousingEmployabilitySafety ]
                 ]
-            , onClick (FocusOrganisation SocialCareDirect)
             ]
-            [ span [ class (getPlanetBlurClass model HealthHousingEmployabilitySafety) ]
+            [ span [ class "none" ]
                 []
             ]
-        , li [ classes [ "saturn", getPlanetBlurClass model HealthHousingEmployabilitySafety ], onClick (FocusOrganisation REACHteam) ]
-            [ span []
-                [ span [ class "ring" ]
-                    [ text "" ]
-                ]
+        , li [ classes [ "national", getPlanetBlurClass model HealthHousingEmployabilitySafety ] ]
+            [ span [ onClick (FocusOrganisation REACHSteering), class "medium national__1" ]
+                []
+            , span [ onClick (FocusOrganisation GangCalling), class "medium national__2" ]
+                []
             ]
-        , li [ classes [ "uranus", "border", getPlanetBlurClass model CulturePolitics ] ]
-            [ a [ href "#uranus" ]
-                [ span [ classes [ "1", getPlanetBlurClass model CulturePolitics ] ]
-                    []
-                , span [ classes [ "2", getPlanetBlurClass model CulturePolitics ] ]
-                    []
-                ]
+        , li [ classes [ "uranus", "border", getOrbitBlurClass model [ HealthHousingEmployabilitySafety, CulturePolitics ] ] ]
+            [ span [ classes [ "none", getPlanetBlurClass model CulturePolitics ] ]
+                []
             ]
-        , li [ classes [ "neptune", getPlanetBlurClass model CulturePolitics ] ]
-            [ a [ href "#neptune" ]
-                [ span []
-                    []
-                ]
+        , li [ classes [ "political", getPlanetBlurClass model CulturePolitics ] ]
+            [ span [ onClick (FocusOrganisation BarnetCouncil), class "medium political__1" ]
+                []
+            , span [ onClick (FocusOrganisation CCG), class "medium political__2" ] []
             ]
-        , li [ classes [ "pluto", getPlanetBlurClass model CulturePolitics ] ]
-            [ a [ href "#pluto" ]
-                [ span []
-                    []
-                ]
+        , li [ classes [ "pluto", getOrbitBlurClass model [ CulturePolitics ] ] ]
+            [ span [ class "none" ]
+                []
             ]
         ]
+
+
+getOrbitBlurClass : Model -> List OrganisationGroup -> String
+getOrbitBlurClass model orgGroups =
+    case model.focusedGroup of
+        Nothing ->
+            ""
+
+        Just focussedGroup ->
+            if List.member focussedGroup orgGroups then
+                ""
+            else
+                "blur"
 
 
 getPlanetBlurClass : Model -> OrganisationGroup -> String
